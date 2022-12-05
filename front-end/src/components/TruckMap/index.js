@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { mapApi } from './../../axios';
+import { graph } from '../../utils/graph'
 import tdata from './../../test_data/treated_data.json';
-import ol from 'ol';
 
 
 let mapApiKey = process.env.REACT_APP_MAPTILER_KEY;
@@ -50,7 +50,7 @@ const TruckMap = () => {
         })
     }, [])
 
-
+    console.log(graph.nodes)
 
     return <>
         <div id='map'></div>
