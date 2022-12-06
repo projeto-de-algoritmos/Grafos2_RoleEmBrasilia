@@ -18,18 +18,17 @@ L.Marker.prototype.options.icon = DefaultIcon;
 function BrasiliaMap() {
 
     const position = [-15.82, -47.85]
+    const [menorCaminho, setMenorCaminho] = useState();
     const [origem, setOrigem] = useState();
     const [destino, setDestino] = useState();
     const [originPosition, setOriginPosition] = useState([15.82, 47.85]);
     const [destinationPosition, setDestinationPosition] = useState([15.82, 47.85]);
-
+    const [polyline, setPolyline] = useState([
+        [15.84129, 48.02767],
+        [15.83342, 48.05658],
+        [15.81750, 48.10504],
+    ]);
     const limeOptions = { color: 'lime' }
-
-    const polyline = [
-          [-15.84129,-48.02767],
-          [-15.83342,-48.05658],
-          [-15.81750,-48.10504],
-    ]
 
     const handleChangeOrigem = (event) => {
         setOrigem(event.target.value);
@@ -42,6 +41,12 @@ function BrasiliaMap() {
     const search = () => {
         setOriginPosition(cities[origem-1].localizacao);
         setDestinationPosition(cities[destino-1].localizacao);
+        setPolyline([
+            [cities[origem-1].localizacao],
+            [cities[9].localizacao],
+            [cities[destino-1].localizacao],
+        ]);
+        setMenorCaminho(45);
     }
 
     const cities = Object.keys(nomesJson.Nome).map((ite)=>{
@@ -62,7 +67,7 @@ function BrasiliaMap() {
                         Origem:
                     </InputLabel>
                     <Select
-                        defaultValue={cities[0].nome}
+                        defaultValue={1}
                         inputProps={{
                             name: 'origem',
                             id: 'uncontrolled-native',
@@ -85,7 +90,7 @@ function BrasiliaMap() {
                         Destino:
                     </InputLabel>
                     <Select
-                        defaultValue={cities[0].nome}
+                        defaultValue={1}
                         inputProps={{
                             name: 'destino',
                             id: 'uncontrolled-native',
@@ -103,6 +108,9 @@ function BrasiliaMap() {
                     </Select>
                 </FormControl>
                 <Button onClick={search} variant="contained" className="Button">Buscar Rota</Button>
+                {menorCaminho == null ? console.log("null")
+                    : <h6>Menor Caminho = {menorCaminho} Km</h6>
+                } 
             </div>
 
 
