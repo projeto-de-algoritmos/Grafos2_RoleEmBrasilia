@@ -1,5 +1,4 @@
 // import logo from './logo.svg';
-import TruckMap from './components/TruckMap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom' 
 import './App.css';
 import BrasiliaMap from './components/BrasiliaMap';
