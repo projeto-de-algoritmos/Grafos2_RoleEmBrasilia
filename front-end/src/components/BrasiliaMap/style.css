@@ -1,0 +1,32 @@
+.map { 
+    height: 80vh; 
+    width: 70vw;
+    margin: 9vh;
+    
+}
+
+.menu {
+    width: 20vw;
+    margin: 2vh;
+    margin-left: 4vh;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    background-color: rgb(102, 99, 99);
+    border:2vh solid rgb(5, 5, 5);
+    align-self: center;
+    height: 96vh;
+}
+
+.Button {
+    background-color: black !important;
+}
+
+
+ 
+  
+
+

@@ -1,44 +1,45 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Role em Brasilia
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 22<br>
+**Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 190047968  |  Paulo Vitor Silva Abi Acl |
+| 160000572  |  Adrian Soares Lopes |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O sistema consiste em um app que determina através do algoritmo Dijkstra, a melhor rota entre regiões administrativas de Brasília.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+Print 1:
+![Aplicação 1](./assets/aplicacao.png)
+
+Print 2:
+![Aplicação 2](./assets/aplicacao2.png)
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python<br>
+**Linguagem**: Java Script<br>
+**Framework**: Leaflet e ReactJs<br>
+
+Versões:
+Node > v18
+Npm > 9
+
+Comandos: <br>
+python parse_csv.py <br>
+npm i <br>
+npm start <br>
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Definir a Origem e destino e apertar o botão de busca.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Para o cálculo do algoritmo de Dijkstra, definimos um grafo onde cada região administrativa do DF são nós e as arestas são as ligações entre elas, para isso fizemos um diagrama para a determinação desse grafo e determinamos a distância entre as cidades adjacentes através do google maps. O diagrama está logo a seguir: 
+
+![Diagrama Grafo](./assets/diagrama_grafo.png)
 
 
 
