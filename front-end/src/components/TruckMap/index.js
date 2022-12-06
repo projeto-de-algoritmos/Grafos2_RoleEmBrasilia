@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { mapApi } from './../../axios';
-import { graph } from '../../utils/graph'
+import { Graph, Node } from '../../utils/graph_tools'
 import tdata from './../../test_data/treated_data.json';
+import names from '../../names.json'
+import dists from '../../dists.json'
 
 
 let mapApiKey = process.env.REACT_APP_MAPTILER_KEY;
@@ -50,8 +52,18 @@ const TruckMap = () => {
         })
     }, [])
 
-    console.log(graph.nodes)
+    let graph = new Graph();
+    for (let k = 0; k < 33; ++k) {
+        let eid = names.RA_Id[`${k}`]
+        let enode = new Node(names.RA_Id[`${k}`], names.Nome[`${k}`])
+        dists[eid].forEach(element => {
+            enode.adjList.push(element) 
+        });
 
+        graph.addNode(enode)
+    }
+
+    console.log(graph.dijkstra('1', '22'));
     return <>
         <div id='map'></div>
         {/* <img alt="static truck map" src={`data:image/png;charset=utf-8;base64,${bfImage}`}></img>
